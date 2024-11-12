@@ -4,7 +4,7 @@
 .about__body,
 .tech__body,
 .projects__body,
-.contacts__body{
+.contact__body{
   margin: auto;
   height: 1000px;
   display: flex;
@@ -16,7 +16,7 @@
 .about,
 .tech,
 .projects,
-.contacts {
+.contact {
   width: 89%;
   height: 92%;
   display: flex;
@@ -249,25 +249,25 @@
 .projects__desktop-cards {
     display: none;
 }
-.contacts__main {
+.contact__main {
   display: flex;
   flex-direction: column;
     align-items: center;
     margin-top: 15vh;
 }
-.contacts__title {
+.contact__title {
   font-size: 2.5rem;
   font-weight: 600;
   margin-bottom: 2rem;
 }
-.contacts__title::before {
+.contact__title::before {
   content: "For any questions please drop a mail";
 }
-.contacts__main h2 {
+.contact__main h2 {
   font-size: 2.7rem;
   font-weight: 600;
 }
-.contacts__gray-text {
+.contact__gray-text {
   color: var(--dark-gray-color);
   font-size: 2.2rem;
   font-weight: 400;
@@ -276,7 +276,8 @@
   .home,
   .about,
   .tech,
-  .projects {
+  .projects,
+  .contact {
     align-items: center;
     width: 100%;
     height: 100%;
@@ -471,20 +472,20 @@
   {
     display: contents;
   }
-  .contacts__title {
+  .contact__title {
     color:var(--lm-header-color);
     font-size: 5.8rem;
   }
-  .contacts__title::before {
+  .contact__title::before {
     content: "For any questions please mail us:";
   }
-  .contacts__gray-text {
+  .contact__gray-text {
     display: none;
   }
-  .contacts__main h2 {
+  .contact__main h2 {
     font-size: 5.8rem;
   }
-  .contacts__main h2:last-child {
+  .contact__main h2:last-child {
     display: none;
   }
 }

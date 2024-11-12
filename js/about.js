@@ -1,36 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-    <title>About Me</title>
-    <link rel="stylesheet" href="styles/style.css" >
-  </head>
-  <body class="about__body">
-    <div class="about">
-        <header class="header">
-            <div class="top-bar">
-              <img src="img/logo.svg" alt="pavanmg logo" >
-              <div class="hamburger-menu">
-                <div class="hamburger-menu__bar"></div>
-                <div class="hamburger-menu__bar"></div>
-                <div class="hamburger-menu__bar"></div>
-              </div>
-            </div>
-            <nav class="nav mobile-disabled">
-              <a href="index.html">Home</a>
-              <a href="about.html">About</a>
-              <a href="tech.html" class="tech-link"></a>
-              <a href="projects.html">Projects</a>
-              <a href="contact.html">Contact</a>
-            </nav>
-            <div class="social-media-icons mobile-disabled">
-                <img src="img/twitterlogo.svg" alt="twitter logo" class="twitter-logo">
-                <img src="img/linkedinlogo.svg" alt="linkedin logo" class="linkedin-logo">
-                <img src="img/github.svg" alt="github logo" class="github-logo">
-            </div>
-          </header>
-      <main class="about__main">
+export const renderAboutPage = () => {
+    return `
         <section class="about__section">
           <h1 class="about__header about__header--am">About Me</h1>
           <p class="about__text about__text--am">
@@ -83,14 +52,5 @@
             </div>
           </section>
         </section>
-      </main>
-      <footer class="footer">
-        <p class="footer__text">
-          Designed and built by
-          <span class="gradient_text">Hamburglar</span> with
-          <span class="gradient_text">Love & Coffee</span>
-        </p>
-      </footer>
-    </div>
-  </body>
-</html>
+`
+}

@@ -1,43 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" >
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-    <title>Document</title>
-    <link rel="stylesheet" href="styles/style.css" >
-  </head>
-  <body class="tech__body">
-    <div class="tech">
-      <header class="header">
-        <div class="top-bar">
-          <img src="img/logo.svg" alt="pavanmg logo" >
-          <div class="hamburger-menu">
-            <div class="hamburger-menu__bar"></div>
-            <div class="hamburger-menu__bar"></div>
-            <div class="hamburger-menu__bar"></div>
-          </div>
-        </div>
-        <nav class="nav mobile-disabled">
-          <a href="index.html">Home</a>
-          <a href="about.html">About</a>
-          <a href="tech.html" class="tech-link"></a>
-          <a href="projects.html">Projects</a>
-          <a href="contact.html">Contact</a>
-        </nav>
-        <div class="social-media-icons mobile-disabled">
-          <img
-            src="img/twitterlogo.svg"
-            alt="twitter logo"
-            class="twitter-logo"
-          >
-          <img
-            src="img/linkedinlogo.svg"
-            alt="linkedin logo"
-            class="linkedin-logo"
-          >
-          <img src="img/github.svg" alt="github logo" class="github-logo" >
-        </div>
-      </header>
+export const renderTechPage = () => {
+return ` 
+
+<div class="tech">
       <main class="tech__main">
         <section class="tech__stack">
           <h1 class="tech__title"></h1>
@@ -74,5 +38,7 @@
         </p>
       </footer>
     </div>
-  </body>
-</html>
+`
+}
+
+
