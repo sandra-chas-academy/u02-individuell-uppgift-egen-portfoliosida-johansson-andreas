@@ -1,5 +1,6 @@
 export const renderAboutPage = () => {
     return `
+    <div class="about">
         <section class="about__section">
           <h1 class="about__header about__header--am">About Me</h1>
           <p class="about__text about__text--am">
@@ -52,5 +53,6 @@ export const renderAboutPage = () => {
             </div>
           </section>
         </section>
+        </div>
 `
 }

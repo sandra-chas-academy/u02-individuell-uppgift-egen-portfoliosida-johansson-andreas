@@ -2,7 +2,6 @@ export const renderTechPage = () => {
 return ` 
 
 <div class="tech">
-      <main class="tech__main">
         <section class="tech__stack">
           <h1 class="tech__title"></h1>
           <p class="tech__text">Technologies I've been working with recently</p>
@@ -29,14 +28,6 @@ return `
             <img src="img/techstack/vscode.png" alt="vscode icon">
           </div>
         </section>
-      </main>
-      <footer class="footer">
-        <p class="footer__text">
-          Designed and built by
-          <span class="gradient_text">Hamburglar</span> with
-          <span class="gradient_text">Love & Coffee</span>
-        </p>
-      </footer>
     </div>
 `
 }

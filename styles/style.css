@@ -1,22 +1,16 @@
 @import "base.css";
 
-.home__body,
-.about__body,
-.tech__body,
-.projects__body,
-.contact__body{
-  margin: auto;
-  height: 1000px;
+body{
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
   font-family: poppins;
 }
 .home,
 .about,
 .tech,
 .projects,
-.contact {
+.contact, 
+.new-content{
   width: 89%;
   height: 92%;
   display: flex;
@@ -43,8 +37,7 @@
   display: flex;
   justify-content: space-between;
 }
-.nav a,
-.about__nav a {
+.nav a{
   text-decoration: none;
   color: black;
 }
@@ -272,14 +265,58 @@
   font-size: 2.2rem;
   font-weight: 400;
 }
+
+.slide-from-right { 
+  animation: slideFromRight 1s ease-in-out forwards; 
+}
+
+@keyframes slideFromRight {
+  0% { transform: translateX(100vw); }
+  100% { transform: translateX(-100vw); }
+}
+
+.slide-to-left { 
+  animation: slideToLeft 1s ease-in-out forwards; 
+}
+
+@keyframes slideToLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100vw); }
+}
+
+
+.slide-from-left { 
+  animation: slideFromLeft 1s ease-in-out forwards; 
+}
+
+@keyframes slideFromLeft {
+  0% { transform: translateX(-200vw); }
+  100% { transform: translateX(-100vw); }
+}
+
+.slide-to-right { 
+  animation: slideToRight 1s ease-in-out forwards; 
+}
+
+@keyframes slideToRight {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(100vw); }
+}
+
+
+
+main {
+  display: flex;
+}
+
 @media (min-width: 1600px) {
   .home,
   .about,
   .tech,
   .projects,
-  .contact {
+  .contact, .new-content {
     align-items: center;
-    width: 100%;
+    width: 100vw;
     height: 100%;
   }
   .about__subsection {
@@ -385,8 +422,7 @@
   .tech__title-tools {
     display: none;
   }
-  .tech__main {
-    margin-top: 15vh;
+  .tech {
     height: 100%;
     display: grid;
     grid-template-columns: repeat(6, 16%);
@@ -406,7 +442,7 @@
   .about h2 {
     font-size: 4.2rem;
   }
-  .project__main {
+  .projects {
     display: grid;
     grid-template-areas: "title title title" "text text text" "card card card" "card card card";
     column-gap: 4.5rem;
