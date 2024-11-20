@@ -5,7 +5,6 @@ import { renderAboutPage } from "./about.js";
 import { renderContactsPage } from "./contact.js";
 import headerContent from "./header.js";
 
-let pageBody = document.getElementsByTagName("body")[0];
 let pageHeader = document.getElementsByTagName("header")[0];
 let pageMain = document.getElementsByTagName("main")[0];
 let page = "home";
@@ -15,7 +14,7 @@ const router = {
   home: renderHomePage(),
   about: renderAboutPage(),
   tech: renderTechPage(),
-  projects: renderProjectsPage(),
+  projects: await renderProjectsPage(),
   contact: renderContactsPage(),
 };
 
