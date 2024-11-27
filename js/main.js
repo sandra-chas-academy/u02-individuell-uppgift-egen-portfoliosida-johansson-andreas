@@ -11,12 +11,13 @@ let page = "home";
 let transitioning = false;
 
 const router = {
-  home: renderHomePage(),
-  about: renderAboutPage(),
-  tech: renderTechPage(),
-  projects: await renderProjectsPage(),
-  contact: renderContactsPage(),
+  home: renderHomePage,
+  about: renderAboutPage,
+  tech: renderTechPage,
+  projects: renderProjectsPage, 
+  contact: renderContactsPage,
 };
+
 
 const renderHeader = () => {
   pageHeader.innerHTML = headerContent();
@@ -29,7 +30,7 @@ const renderHeader = () => {
   });
 };
 
-const transitionToPage = (pageName) => {
+const transitionToPage = async (pageName) => {
   const currentContent = document.querySelector("main > div");
 
   const oldIndex = Object.keys(router).indexOf(currentContent.classList[0]);
@@ -38,8 +39,8 @@ const transitionToPage = (pageName) => {
   transitioning = true;
 
   const newContent = document.createElement("div");
-  newContent.innerHTML = renderMain(pageName);
   newContent.classList.add("new-content");
+  newContent.innerHTML = await renderMain(pageName);
   pageMain.appendChild(newContent);
 
   let sideToSlide;
@@ -64,15 +65,15 @@ const transitionToPage = (pageName) => {
   }, 1000);
 };
 
-const renderMain = (page) => {
-  const returnHTML = router[page];
-  return returnHTML;
+const renderMain = async (page) => {
+  const pageContent = await router[page]();
+  return pageContent;
 };
 
-const renderContent = () => {
+const renderContent = async () => {
   const newContent = document.createElement("div");
   newContent.classList.add(page);
-  newContent.innerHTML = renderMain(page);
+  newContent.innerHTML = await renderMain(page); 
   pageMain.appendChild(newContent);
 };
 
