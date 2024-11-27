@@ -1,4 +1,13 @@
-export const renderAboutPage = () => {
+export const renderAboutPage = async () => {
+
+  try {
+    const response = await fetch("../cv.json")
+    console.log(response)
+  }
+  catch (error)
+  {
+    console.error(error);
+  }
     return `
     <div class="about">
         <section class="about__section">
