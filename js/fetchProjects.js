@@ -3,12 +3,13 @@ export const fetchGithubRepo = async (username, repoName) => {
   
   try {
     const response = await fetch(url);
-    
-    if (!response.ok) {
-      throw new Error(`Error: ${response.statusText}`);
-    }
     const repos = await response.json(); 
-    return {description: repos.description, reponame: repos.name};
+
+    console.log(repos);
+
+    const languages = await((await fetch(repos.languages_url)).json());
+
+    return {description: repos.description, reponame: repos.name, url:repos.svn_url, languages: languages};
   } catch (e) {
     console.error("Error:", e);
   }

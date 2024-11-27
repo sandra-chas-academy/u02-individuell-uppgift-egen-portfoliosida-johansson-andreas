@@ -4,59 +4,82 @@ export const renderProjectsPage = async () => {
   const projectNames = ["quiz-game", "wh-math"];
   const ghUser = "johansson-andreas";
 
+  const projectMain = document.createElement("div");
+  const projectWrapper = document.createElement("div");
+  projectWrapper.classList.add("projects");
+
+  const projectHeader = document.createElement("h1");
+  projectHeader.classList.add("projects__title");
+  projectHeader.textContent = "Projects";
+
+  const projectText = document.createElement("p");
+  projectText.classList.add("project__subtitle");
+  projectText.textContent = "Things I've built so far";
+
+  projectWrapper.appendChild(projectHeader);
+  projectWrapper.appendChild(projectText);
+
+  const tempCards = projectNames.reduce((acc, projectName) => {
+    acc[projectName] = createProjectCard(projectName);
+    return acc;
+  }, {});
+
+  Object.values(tempCards).forEach((tempCard) => {
+    projectWrapper.appendChild(tempCard);
+  });
+
   try {
     const projects = await Promise.all(
       projectNames.map((projectName) => fetchGithubRepo(ghUser, projectName))
     );
-    console.log(projects)
-    const pCardsArray = document.querySelectorAll(".projects__card")
-    console.log(pCardsArray)
 
+    projects.map((project) => {
+      tempCards[project.reponame].innerHTML = populateProject(project);
+    });
+    
   } catch (error) {
     console.log(error);
   }
+  projectMain.appendChild(projectWrapper);
+  return projectMain.innerHTML;
+};
 
-  return `  
-  <div class="projects">
-              <h1 class="projects__title">Projects</h1>
-        <p class="project__subtitle">Things I've built so far</p>
-        <article class="projects__card">
-          <section class="card__body">
-            <h2>Project Title 1</h2>
-            <p class="card__body__text">
-              This is a sample project description random things are described
-              here
-            </p>
-            <span class="card__body-title">Tech Stack</span>
-            <span class="projects__techstack">: HTML/CSS, JavaScript</span>
-          </section>
-          <footer class="card__footer">
-            <a href=""
-              ><img src="img/link-chain.svg" alt="link icon" >Live Preview</a
-            >
-            <a href=""
-              ><img src="img/github.svg" alt="github logo" >View Code</a
-            >
-          </footer>
-        </article>
-        <article class="projects__card">
-          <section class="card__body">
-            <h2>Project Title 2</h2>
-            <p class="card__body__text">
-              This is a sample project description random things are described
-              here
-            </p>
-            <span>Tech Stack</span>
-            <span class="projects__techstack">: HTML/CSS, JavaScript</span>
-          </section>
-          <footer class="card__footer">
-            <a href=""
-              ><img src="img/link-chain.svg" alt="link icon" >Live Preview</a
-            >
-            <a href=""
-              ><img src="img/github.svg" alt="github logo" >View Code</a
-            >
-          </footer>
-        </article>
-    </div>`;
+const populateProject = (project) => {
+
+  const techStack = Object.keys(project.languages)
+  .map(language => `<span>${language}</span>`)
+  .join(", ");
+
+ return `
+  <section class="card__body">
+    <h2>${project.reponame}</h2>
+    <p class="card__body__text">
+      ${project.description}
+    </p>
+    <span>Tech Stack</span>
+    <span class="projects__techstack">: ${techStack}</span>
+  </section>
+  <footer class="card__footer">
+    <a href="${project.url}"
+      ><img src="img/github.svg" alt="github logo" >View Code</a
+    >
+  </footer>
+`;
+};
+
+const createProjectCard = (projectName) => {
+  const newCard = document.createElement("article");
+  newCard.classList.add("projects__card");
+  newCard.id = "card__" + projectName;
+  newCard.innerHTML = `
+            <section class="card__body">
+              <h2>${projectName}</h2>
+              <p class="card__body__text">
+                Loading.... Please Wait...
+              </p>
+            </section>
+            <footer class="card__footer">
+            </footer>
+   `;
+  return newCard;
 };
