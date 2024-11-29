@@ -34,8 +34,8 @@ export const renderProjectsPage = async () => {
     );
 
     projects.map((project) => {
-      tempCards[project.reponame].innerHTML = populateProject(project);
-    });
+      tempCards[project.reponame].innerHTML = populateProject(project);  
+    })
     
   } catch (error) {
     console.log(error);
@@ -63,6 +63,7 @@ const populateProject = (project) => {
     <a href="${project.url}"
       ><img src="img/github.svg" alt="github logo" >View Code</a
     >
+    <i id="${project.reponame}ExpandIcon" class="expand-icon" />
   </footer>
 `;
 };

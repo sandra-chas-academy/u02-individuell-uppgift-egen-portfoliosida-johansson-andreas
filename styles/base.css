@@ -12,6 +12,7 @@
     --dm-bg-color: #191919;
     --dm-header-color: #CCCCCC;
     --dm-light-gray: #363636;
+    --transition-time: 1s;
 }
 body {
     box-sizing: border-box;

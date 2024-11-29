@@ -27,18 +27,21 @@
         {
             "study-title": "Gymnasium",
             "period": "2008-2011",
-            "description": "Tech program with a gaming/internetprogramming focus at gymnasium. Various areas within software development, such as C#, PHP and SQL"
+            "description": "Tech program with a gaming/internetprogramming focus at gymnasium. Various areas within software development, such as C#, PHP and SQL",
+            "study-place": "Vilunda Gymnasium"
         },
         {
             "study-title": "Engineering physics",
             "period": "2012-2013",
-            "description": "Studied engineering physics at Uppsala University for a year prior to switching to computer science"
+            "description": "Studied engineering physics at Uppsala University for a year prior to switching to computer science",
+            "study-place": "Uppsala University"
         },        
         {
             "study-title": "Computer Science",
             "period": "2014-2015",
-            "description": "Computer science at Stockholm University. Various languages, such as C#, C++, Java and Python."
+            "description": "Computer science at Stockholm University. Various languages, such as C#, C++, Java and Python.",
+            "study-place": "Stockholm University"
+
         }
     ]
-
 }

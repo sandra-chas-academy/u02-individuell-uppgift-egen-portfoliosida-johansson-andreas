@@ -4,9 +4,12 @@ import { renderProjectsPage } from "./projects.js";
 import { renderAboutPage } from "./about.js";
 import { renderContactsPage } from "./contact.js";
 import headerContent from "./header.js";
+import footerContent from "./footer.js"
 
 let pageHeader = document.getElementsByTagName("header")[0];
 let pageMain = document.getElementsByTagName("main")[0];
+let pageFooter = document.getElementsByTagName("footer")[0];
+
 let page = "home";
 let transitioning = false;
 
@@ -40,6 +43,7 @@ const transitionToPage = async (pageName) => {
 
   const newContent = document.createElement("div");
   newContent.classList.add("new-content");
+  newContent.classList.add(pageName)
   newContent.innerHTML = await renderMain(pageName);
   pageMain.appendChild(newContent);
 
@@ -77,5 +81,23 @@ const renderContent = async () => {
   pageMain.appendChild(newContent);
 };
 
+const renderFooter = async () => {
+  pageFooter.innerHTML = footerContent(); 
+
+}
+
+document.body.addEventListener("mouseover", (e) => {
+  const card = e.target.closest(".projects__card");
+  if (card && !card.contains(e.relatedTarget)) {
+  }
+});
+
+document.body.addEventListener("mouseout", (e) => {
+  const card = e.target.closest(".projects__card");
+  if (card && !card.contains(e.relatedTarget)) {
+  }
+});
+
 renderHeader();
 renderContent();
+renderFooter();
