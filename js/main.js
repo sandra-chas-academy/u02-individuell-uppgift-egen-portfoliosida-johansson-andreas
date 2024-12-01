@@ -87,16 +87,16 @@ const renderFooter = async () => {
 }
 
 document.body.addEventListener("mouseover", (e) => {
+  console.log("mouseover")
   const card = e.target.closest(".projects__card");
   if (card && !card.contains(e.relatedTarget)) {
+    console.log("Trigger")
+    const blur = document.createElement("div");
+    blur.classList.add("blur");
+    document.body.appendChild(blur);
   }
 });
 
-document.body.addEventListener("mouseout", (e) => {
-  const card = e.target.closest(".projects__card");
-  if (card && !card.contains(e.relatedTarget)) {
-  }
-});
 
 renderHeader();
 renderContent();

@@ -323,6 +323,19 @@ main {
   height: 100%
 }
 
+.focus {
+  transition: all;
+  transform: scale(1.5);
+  margin: 0 auto;
+}
+
+.blur {
+  width: 100vw;
+  height: 100vh;
+  background-color: #0000002a;
+  position: fixed;
+}
+
 @media (min-width: 1600px) {
   .home,
   .about,
