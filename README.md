@@ -14,3 +14,5 @@ JSON, som står för JavaScript Object Notation är ett textformat för att stan
 
 - ## Vad är HTTP och varför bör man som frontendutvecklare ha kunskap om det och dess protokoll?
 HTTP är protokollet som används vid kommunikationen mellan olika sidor och resurser. Att förstå den teoriska delen av protokollet och vad som faktiskt händer i backgrunden kanske inte är otroligt viktigt som en frontendutvecklare, men att förstå vad det innebär är vitalt när man ska kommunicera med andra resurser online. När du kommunicerar med en annan resurs så måste du veta på vilket sätt du vill interagera med den resursen, t ex om du bara vill begära information eller om vill modifiera data på den resursen. Att ha en grundlig förståelse för HTTP underlättar också för att förstå svaret du får på din begäran, speciellt när det är något som inte fungerar som du förväntade dig. 
+
+[Netlify link](https://luminous-starburst-c21892.netlify.app/)
