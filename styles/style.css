@@ -92,7 +92,33 @@ body{
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+.puzzle {
+  background-color: rgb(223, 252, 176);
+  border-radius: 20px;
+  border: 1 px solid rgb(243, 180, 180);
+  grid-template-areas: "sq sq" "sq sq";
+  display: grid;
+  width: 300px;
+  height: 300px;
+}
+.puzzle__puzzle-piece {
 
+  position: relative;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.puzzle-image-1 {
+  background-image: url("../img/puzzlePieces/topLeft.webp");
+}
+.puzzle-image-2 {
+  background-image: url("../img/puzzlePieces/topRight.webp");
+}
+.puzzle-image-3 {
+  background-image: url("../img/puzzlePieces/bottomLeft.webp");
+}
+.puzzle-image-4 {
+  background-image: url("../img/puzzlePieces/bottomRight.webp");
+}
 .header {
   display: flex;
   flex-direction: column;
@@ -319,8 +345,6 @@ body{
 
 main {
   display: flex;
-  overflow: hidden;
-  height: 100%
 }
 
 .focus {
