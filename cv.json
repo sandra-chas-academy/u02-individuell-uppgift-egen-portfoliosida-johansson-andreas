@@ -1,0 +1,47 @@
+{
+    "work-experiences" : [
+        {
+            "work-title": "Software Development",
+            "description": "Worked part time with software development during uni studies. Mostly Java projects",
+            "work-status": "Part time",
+            "employer": "Ericsson",
+            "period": "2014-2015"
+        },
+        {
+            "work-title": "Software Development",
+            "description": "Worked full time with software development in between uni studies. Mostly C# projects",
+            "work-status": "Full time",
+            "employer": "Ericsson",
+            "period": "2013-2013"
+        },
+        {
+            "work-title": "Tech Support",
+            "description": "Worked tech support for Apple products towards end consumers",
+            "work-status": "Full time",
+            "employer": "Teleperformance",
+            "period": "2017-2019"
+        }
+
+    ],
+    "studies": [
+        {
+            "study-title": "Gymnasium",
+            "period": "2008-2011",
+            "description": "Tech program with a gaming/internetprogramming focus at gymnasium. Various areas within software development, such as C#, PHP and SQL",
+            "study-place": "Vilunda Gymnasium"
+        },
+        {
+            "study-title": "Engineering physics",
+            "period": "2012-2013",
+            "description": "Studied engineering physics at Uppsala University for a year prior to switching to computer science",
+            "study-place": "Uppsala University"
+        },        
+        {
+            "study-title": "Computer Science",
+            "period": "2014-2015",
+            "description": "Computer science at Stockholm University. Various languages, such as C#, C++, Java and Python.",
+            "study-place": "Stockholm University"
+
+        }
+    ]
+}

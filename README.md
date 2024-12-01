@@ -1,76 +1,18 @@
-# Instruktioner
+# Sammanfattning av projektet
 
-Denna uppgift går ut på att du bygga vidare uppgift u01 - Portfoliosida utifrån designskiss med Javascript. Du är nu fri att ändra till egen design / layout, samt eget innehåll. Det är dock viktigt att du behåller en sektion för CV ("About me") och en sektion med projekt ("Projects") eftersom du ska vidareutveckla sidan med Javascript på dessa sektioner. 
+Jag är överlag inte super nöjd med det här projektet. När vi fick uppgiften att vidare utveckla den första uppgiften vi gjorde så borde jag ha gått tillbaka och skapat en bättre struktur för hela projektet där jag kontrollerade mer med javascript än att använda innerHTML för att hantera innehållet på de olika sidorna. Jag tyckte det var en acceptabel lösning fram tills att jag ville introducera dynamiska element på de olika undersidorna vilket skapade problem då jag inte renderar html elementen i undersidorna och måste då hantera all dynamisk DOM-manipulation från main filen. JS funktionerna fungerar som dom ska, så slutresultatet blev som jag ville, men resan dit var lite bökigare än vad den behövde vara. Till skillnad från gruppprojektet i den här kursen där vi hade en konkret plan från dag 1 så blev det lite för mycket improvisation i det här projektet, så det är något jag bör lägga mer fokus på i framtida projekt. 
 
-## Vad du ska göra
+Men för att fokusera på det jag är nöjd med och styrkorna av det här projektet så är jag ändå nöjd med js delen av projektet. Jag tycker själva implementationen av min renderingslogik var lyckad då jag ville göra den så skalbar som möjligt, vilket den är. Jag tycker jag lyckats få in dragbara element med vanilla js på ett bra sätt och hur jag hanterade på att hålla koll på den positionella relationen mellan de olika dragbara elementen. 
 
-Du ska bygga vidare på  u01 - Portfoliosida utifrån designskiss med Javascript. och se till att du följer följande kravställningar: 
+# Teoretiska frågor
 
-### CV i en fil:
-Dina egna utbildningar och tidigare arbetsplatser ska nu ersätta "About me"-sidan. Ta med så mycket som möjligt att ditt "riktiga CV", men iallafall minst tre poster av varje.
-Vilka utbildningar du läst och vilka tidigare arbeten du haft ska ligga i en separat fil i JSON-format. Denna JSON-fil ska läsas och och generera ditt CV på den tidigare motsvarigheten av "About me" sidan.
+ - ## Vad kan man utveckla m.h.a av Javascript inom frontend?
+Vid all form av dynamiskt innehåll så underlättar javascript markant. Idag så är html kraftfullt nog för att klara mycket på egen hand, men för att som inte är en statisk hemsida så finns det få anledningar till att inte använda javascript. Så jag skulle säga att frågan är snarare 'Vad kan man inte uvbeckla m.h.a javascript inonm frontend?' där svaret är väldigt få saker. En av de få begränsningar är kommunikationen till externa resurser som inte är en simpel url, t. ex. en databas. Föurtom det så är den enda begränsningen din fantasi. 
 
+- ## Vad är JSON och hur används det inom frontend?
+JSON, som står för JavaScript Object Notation är ett textformat för att standardisera hur man kan spara och skicka text mellan enheter. Att ha en standard för ett textformat hjälper förstås på många olika sätt, både att det gör det lättare för användaren att sätta sig in i och förstå hur själva texten är sparad men även för att underlätta interaktionen mellan olika verktyg som använder JSON. Om det är så att du har en publik API så hjälper det förstås otroligt mycket om man använder en standard så att klienten som försöker använda APIet lätt kan förstå datan som den får tillbaka. Att använda JSON specifikt, istället för andra alternativ som XML eller CSV, har fördelar och nackdelar. Några av fördelarna är att JSON, som man kan förstå från namnet, är väldigt likt javascript object och kan då simpelt översättas om till just javascript objekt. Det är också ett ganska kompakt format som inte förlorar allt för mycket läsbarhet. En nackdel, som kommer från det faktum att det är så kompakt, är att man inte kan specifiera vilken typ av data ett värde ska vara, som man t ex kan göra i XML. 
 
-### Interaktiva scripts:
-Din CV-sida ska innehålla minst två interaktiva JavaScript. Exempel kan vara en modal, slideshow, scroll-effekt, dölja/visa element, o.s.v
+- ## Vad är HTTP och varför bör man som frontendutvecklare ha kunskap om det och dess protokoll?
+HTTP är protokollet som används vid kommunikationen mellan olika sidor och resurser. Att förstå den teoriska delen av protokollet och vad som faktiskt händer i backgrunden kanske inte är otroligt viktigt som en frontendutvecklare, men att förstå vad det innebär är vitalt när man ska kommunicera med andra resurser online. När du kommunicerar med en annan resurs så måste du veta på vilket sätt du vill interagera med den resursen, t ex om du bara vill begära information eller om vill modifiera data på den resursen. Att ha en grundlig förståelse för HTTP underlättar också för att förstå svaret du får på din begäran, speciellt när det är något som inte fungerar som du förväntade dig. 
 
-### Portfolio:
- Du publicerar minst två uppgifter / projekt från tidigare eller nuvarande studier / arbete inom HTML /CSS
-
-### 👉  VG-krav
-
-Din portfolio ska utökas så att den hämtar in publika projekt som finns i din egen Github via API. Den ska visa dessa projekt i din portfolio med namn och beskrivning.
-
-Du får gärna ha både dessa projekt och andra som genereras utifrån JSON-data om du känner för det, eller så ersätter du projekten så det bara är dina Github-projekt. Eventuellt kan du behöva komplettera datan från Github API med t.ex bilder ifrån JSON-datan.
-
-När hämtningen av projekten sker ska det finnas information om att projekten håller på att ladda in så att besökaren inte undrar varför sidan först är tom.
-
-
-
-### Tekniska krav:
-* Validerad med 0 fel på https://validator.w3.org
-* Inga errors i Console
-
-### Sammantfattning av projekt + teoretiska frågor
-
-1. Du sammanfattar ditt projekt i README.md och reflekterar kring styrkor och ev brister. Max 500 ord.
-2. Du svarar på dessa frågor (max 800 ord):
-
-Vad kan man utveckla m.h.a av Javascript inom frontend?
-Vad är JSON och hur används det inom frontend?
-Vad är HTTP och varför bör man som frontendutvecklare ha kunskap om det och dess protokoll?
-
-
-## Kriterier för bedömning
-
-
-Icke Godkänd (IG), Godkänd (G) eller Väl Godkänd (VG)
-
-### Godkänd (G)
-Din portfolio-sida uppfyller alla krav enligt kravspecifikationen.
-Du visar att du kan utan allvarliga brister eller missar utveckla denna portfoliosida enligt kraven
-Du sammanfattar ditt projekt samt ger ett översiktligt och korrekt svar på frågorna
-
-
-### Väl Godkänd (VG)
-
-Din portfolio-sida uppfyller alla krav enligt kravspecifikationen samt VG-kraven
-Du uppvisar en mer avancerad förståelse för Git genom att jobba med en developer-branch som du sedan mergar i main
-Du visar att du kan utan brister, eller bara i sådan omfattning att de knappt märks eller påverkar slutresultatet
-
-
-### Börja uppgift / Din inlämning
-* Du börjar och lämnar in din uppgift genom Github Classroom på denna länk.
-* Återkoppling ges i Canvas
-
-
-
-
-
-
-
-
-
-
-
-# 
+[Netlify link](https://luminous-starburst-c21892.netlify.app/)
